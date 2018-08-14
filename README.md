@@ -15,3 +15,9 @@
 **Bypass RenderNormalMode**
  * This will not render the world.
  * This can greatly reduce CPU but doesn't reduce memory usage much.
+  
+**Pea 4K Res Unlocked**
+ * This patch was developed by Pea.
+ * Pea has given me persmission to deploy this patch.
+ * This allows the client to select larger resolutions.
+ * It does not fix text scaling issues at such high resolutions.
