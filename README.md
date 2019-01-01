@@ -21,3 +21,8 @@
  * Pea has given me persmission to deploy this patch.
  * This allows the client to select larger resolutions.
  * It does not fix text scaling issues at such high resolutions.
+
+<br/>
+<br/>
+
+![Launcher](/Docs/Images/Main.png?raw=true)
