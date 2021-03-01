@@ -73,7 +73,29 @@ namespace Mag_ACClientPatcher
                         0x24, 0x54, 0x7E, 0x02, 0x8B, 0xD8, 0x8D, 0x44, 0x24, 0x18, 0x50, 0x6A, 0x3F, 0x8B, 0xCE, 0xE8,
                         0x48, 0xCD, 0xFF, 0xFF, 0x84, 0xC0, 0xEB
                     })
-            }, "This is Peas client patch that unlocks 4K resolution. Pea has given me permission to add his patch to this tool.")
+            }, "This is Peas client patch that unlocks 4K resolution. Pea has given me permission to add his patch to this tool."),
+
+            /*
+             This patch NOP's the following lines of code in Client::UseTime
+
+            .text:00411FFB                 call    ?StartFrame@SceneTool@@SAXXZ ; SceneTool::StartFrame(void)
+            .text:00412000                 mov ecx, [esi + 120h]; this
+            .text:00412006                 call? Draw@SmartBox@@QAEXXZ ; SmartBox::Draw(void)
+
+            We do not NOP EndFrame because decal uses that as the trigger for RenderFrame event
+            */
+            new Patch("Client::UseTime Disable StartFrame and Draw", new List<PatchPart>
+            {
+	            new PatchPart(0x011FFB,
+		            new byte[]
+		            {
+			            0xE8, 0xA0, 0xC6, 0x02, 0x00, 0x8B, 0x8E, 0x20, 0x01, 0x00, 0x00, 0xE8, 0x05, 0x36, 0x04, 0x00
+                    },
+		            new byte[]
+		            {
+			            0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90
+                    })
+            }, "This disables all rendering when in-world. It removes almost all CPU/GPU based load. It doesn't reduce memory usage much."),
         };
 
         /// <summary>

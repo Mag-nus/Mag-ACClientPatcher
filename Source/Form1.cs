@@ -27,6 +27,8 @@ namespace Mag_ACClientPatcher
         {
             base.OnLoad(e);
 
+            this.Text += " v" + Application.ProductVersion;
+
             LoadNewACClientExe();
         }
 
