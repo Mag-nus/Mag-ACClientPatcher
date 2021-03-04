@@ -32,3 +32,11 @@
 <br/>
 
 ![Launcher](/Docs/Images/Main.png?raw=true)
+
+<br/>
+<br/>
+
+**Tools I use to develop these patches**
+ * AC Client 2013-09 11.4186 for reference
+ * IDA v6.6 - v6.9 to analyze the exe
+ * OllyDbg 2.01 to modify the assembly and save a patched exe
