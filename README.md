@@ -23,7 +23,7 @@
  * It does not fix text scaling issues at such high resolutions.
 
 **Client::UseTime Disable StartFrame and Draw**
- * This will not render anytying past initial connection. You will only see a black screen.
+ * This will not render anything past initial connection. You will only see a black screen.
  * It removes almost all CPU/GPU based load but doesn't reduce memory usage much.
  * Mouse inputs will still register
  * Decal plugins will still run
