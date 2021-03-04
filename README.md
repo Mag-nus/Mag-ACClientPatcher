@@ -26,7 +26,7 @@
  * This will not render anything past initial connection. You will only see a black screen.
  * It removes almost all CPU/GPU based load but doesn't reduce memory usage much.
  * Mouse inputs will still register
- * Decal plugins will still run
+ * Decal plugins will still run, but do not render.
 
 <br/>
 <br/>
