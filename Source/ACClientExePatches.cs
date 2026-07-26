@@ -96,7 +96,29 @@ namespace Mag_ACClientPatcher
 			            0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90
                     })
             }, "This disables all rendering when in-world. It removes almost all CPU/GPU based load. It doesn't reduce memory usage much."),
-        };
+
+            new Patch("eriknihlen Palette memory-leak fix", new List<PatchPart>
+			{
+				new PatchPart(0x0013effe,
+					new byte[]
+					{
+						0xff, 0x40, 0x24
+					},
+					new byte[]
+					{
+						0x90, 0x90, 0x90
+					}),
+				new PatchPart(0x0013f19c,
+					new byte[]
+					{
+						0xff, 0x46, 0x24
+					},
+					new byte[]
+					{
+						0x90, 0x90, 0x90
+					})
+			}, " https://github.com/eriknihlen/ac-eor-palette-leak-fix"),
+		};
 
         /// <summary>
         /// Will return null if no match was found.
