@@ -117,7 +117,7 @@ namespace Mag_ACClientPatcher
 					{
 						0x90, 0x90, 0x90
 					})
-			}, " https://github.com/eriknihlen/ac-eor-palette-leak-fix"),
+			}, "https://github.com/eriknihlen/ac-eor-palette-leak-fix"),
 		};
 
         /// <summary>
